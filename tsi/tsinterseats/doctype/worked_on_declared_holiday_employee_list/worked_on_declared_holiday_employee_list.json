@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2023-10-17 10:58:20.097725",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "section_break_yej97",
+  "dh_date",
+  "department",
+  "day_shift",
+  "night_shift",
+  "column_break_rpv8n",
+  "posting_date",
+  "tsisin",
+  "contract",
+  "employee_details_section",
+  "employees"
+ ],
+ "fields": [
+  {
+   "fieldname": "dh_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "DH Date",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "column_break_rpv8n",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "HR-DHA-.YYYY.-"
+  },
+  {
+   "fieldname": "section_break_yej97",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fieldname": "employees",
+   "fieldtype": "Table",
+   "label": "Employees",
+   "options": "DH Employee List"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.night_shift !=1",
+   "fieldname": "day_shift",
+   "fieldtype": "Check",
+   "label": "Day Shift"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.day_shift !=1",
+   "fieldname": "night_shift",
+   "fieldtype": "Check",
+   "label": "Night Shift"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.contract !=1",
+   "fieldname": "tsisin",
+   "fieldtype": "Check",
+   "label": "TSISIN"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.tsisin !=1",
+   "fieldname": "contract",
+   "fieldtype": "Check",
+   "label": "Contract"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Department",
+   "options": "Department"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-16 13:38:44.415550",
+ "modified_by": "Administrator",
+ "module": "tsinterseats",
+ "name": "Worked on Declared Holiday Employee List",
+ "name_case": "Title Case",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

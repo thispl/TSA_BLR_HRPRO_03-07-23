@@ -1,0 +1,128 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:name_of_the_requester",
+ "creation": "2023-08-03 12:32:31.138468",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "hrmprf_number",
+  "date_of_request",
+  "requester",
+  "name_of_the_requester",
+  "department",
+  "section_break_zqqey",
+  "for_designation",
+  "required_no_of_candidates",
+  "gender",
+  "educational_qualification",
+  "age",
+  "marital_status",
+  "any_other_remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "date_of_request",
+   "fieldtype": "Date",
+   "label": "Date of Request"
+  },
+  {
+   "fetch_from": "requester.employee_name",
+   "fieldname": "name_of_the_requester",
+   "fieldtype": "Data",
+   "label": "Name of the requester",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "requester.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department Name",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_zqqey",
+   "fieldtype": "Section Break",
+   "label": "DETAILS OF EMPLOYEE TO BE NEEDED"
+  },
+  {
+   "fieldname": "for_designation",
+   "fieldtype": "Link",
+   "label": "For Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "required_no_of_candidates",
+   "fieldtype": "Data",
+   "label": "Required no of candidates"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nFemale\nMale\nOthers"
+  },
+  {
+   "fieldname": "educational_qualification",
+   "fieldtype": "Data",
+   "label": "Educational Qualification "
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Select",
+   "label": "Age",
+   "options": "\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried\nWidow\nDivorced"
+  },
+  {
+   "fieldname": "any_other_remark",
+   "fieldtype": "Small Text",
+   "label": "Any Other Remark "
+  },
+  {
+   "fieldname": "hrmprf_number",
+   "fieldtype": "Data",
+   "label": "HR/MPRF Number"
+  },
+  {
+   "fieldname": "requester",
+   "fieldtype": "Link",
+   "label": "Requester",
+   "options": "Employee"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-14 10:55:21.810709",
+ "modified_by": "Administrator",
+ "module": "tsinterseats",
+ "name": "Manpower Request",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

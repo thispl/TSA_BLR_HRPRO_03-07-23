@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-31 07:25:15.489030",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "from_date",
+  "employee",
+  "column_break_xk2ry",
+  "to_date",
+  "process_checkins",
+  "process_attendance"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_xk2ry",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "process_checkins",
+   "fieldtype": "Button",
+   "label": "Process Checkins"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "process_attendance",
+   "fieldtype": "Button",
+   "label": "Process Attendance"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-10-31 19:58:50.053024",
+ "modified_by": "Administrator",
+ "module": "tsinterseats",
+ "name": "Attendance Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

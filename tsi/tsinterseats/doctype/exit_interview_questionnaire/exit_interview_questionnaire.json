@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-07-25 10:40:53.384114",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "your_position",
+  "your_department",
+  "the_company"
+ ],
+ "fields": [
+  {
+   "fieldname": "your_position",
+   "fieldtype": "Data",
+   "label": "Your Position"
+  },
+  {
+   "fieldname": "your_department",
+   "fieldtype": "Data",
+   "label": "Your Department"
+  },
+  {
+   "fieldname": "the_company",
+   "fieldtype": "Data",
+   "label": "The Company"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-25 11:21:27.738136",
+ "modified_by": "Administrator",
+ "module": "tsinterseats",
+ "name": "Exit Interview Questionnaire",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

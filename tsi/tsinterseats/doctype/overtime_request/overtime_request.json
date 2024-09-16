@@ -1,0 +1,199 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "HR-OTR-.YY.-.MM.-.#####",
+ "creation": "2023-08-05 10:36:11.634484",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "department",
+  "designation",
+  "column_break_crydu",
+  "ot_date",
+  "attendance",
+  "shift",
+  "from_time",
+  "to_time",
+  "section_break_mmqxi",
+  "biometric_checkin",
+  "biometric_checkinout",
+  "total_worked_hours",
+  "column_break_fiwa6",
+  "ot_applicable",
+  "ot_hours",
+  "ot_level_1_approver",
+  "ot_level_2_approver",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_crydu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.employee",
+   "fieldname": "ot_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "OT Date",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From Time",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mmqxi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "biometric_checkin",
+   "fieldtype": "Datetime",
+   "label": "Biometric Checkin",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_worked_hours",
+   "fieldtype": "Time",
+   "label": "Total Worked Hours",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_fiwa6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "ot_hours",
+   "fieldtype": "Float",
+   "label": "OT Hours",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Overtime Request",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.ot_applicable",
+   "fieldname": "ot_applicable",
+   "fieldtype": "Check",
+   "label": "OT Applicable",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "biometric_checkinout",
+   "fieldtype": "Datetime",
+   "label": "Biometric CheckinOUT",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Shift",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "attendance",
+   "fieldtype": "Link",
+   "label": "Attendance",
+   "options": "Attendance"
+  },
+  {
+   "fieldname": "ot_level_1_approver",
+   "fieldtype": "Link",
+   "label": "OT Level 1 Approver",
+   "options": "User"
+  },
+  {
+   "fieldname": "ot_level_2_approver",
+   "fieldtype": "Link",
+   "label": "OT Level 2 Approver",
+   "options": "User"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-27 13:41:45.364749",
+ "modified_by": "Administrator",
+ "module": "tsinterseats",
+ "name": "Overtime Request",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -50,7 +50,14 @@ app_license = "MIT"
 
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
-
+jinja = {
+	"methods": [
+		"tsi.custom.salary_details",
+		"tsi.custom.monthly_in_out",
+        "tsi.custom.leave_days_count"
+	]
+}
+# fixtures = ["Client Script","Print Format","Report","Workspace"]
 # Jinja
 # ----------
 
@@ -98,6 +105,12 @@ app_license = "MIT"
 #	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
+override_doctype_class = {
+	"Salary Slip": "tsi.overrides.CustomSalarySlip",
+    "Attendance" : "tsi.overrides.CustomAttendance",
+    # "Leave Application" : "tsi.overrides.CustomLeaveApplication",
+}
+
 # Document Events
 # ---------------
 # Hook on document methods and events
@@ -113,7 +126,7 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 #	"all": [
 #		"tsi.tasks.all"
 #	],
@@ -129,7 +142,15 @@ app_license = "MIT"
 #	"monthly": [
 #		"tsi.tasks.monthly"
 #	],
-# }
+"cron":{
+		"*/10 * * * *" :[
+			'tsi.mark_attendance.mark_att_process'
+		],
+		"30 00 * * *" :[
+			'tsi.custom.update_relieving_date'
+		]
+	}
+}
 
 # Testing
 # -------
@@ -140,7 +161,7 @@ app_license = "MIT"
 # ------------------------------
 #
 # override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "tsi.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "tsi.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
@@ -199,3 +220,30 @@ app_license = "MIT"
 # auth_hooks = [
 #	"tsi.auth.validate"
 # ]
+doc_events = {
+	'Full and Final Statement': {
+		'before_submit': 'tsi.custom.update_mis_status_on_submit'
+	},
+	# 'Leave Application': {
+	# 	'validate': ['tsi.custom.validate_leave_dates' , 'tsi.custom.validate_leave_type_and_half_day','tsi.custom.validate_earn_leave','tsi.custom.validate_casual_leave','tsi.custom.validate_combined_leave']
+	# },   
+	'Employee Checkin':{
+		'on_update': 'tsi.custom.update_att'
+	},
+	# "Attendance":
+	# {
+	# 	'on_update': ['tsi.mark_attendance.update_att','tsi.mark_attendance.mark_wh_ot_on_update']
+	# },
+	"Employee":{
+		"validate": "tsi.custom.inactive_employee"
+	},
+    "Leave Application": {
+		"after_insert": ["tsi.custom.get_casual_leaves","tsi.custom.cl_el_restriction"]
+	}
+    # "On Duty Application":{
+	# 	"validate": "tsi.custom.restrict_od"
+	# },
+	# "Payroll Entry": {
+	# 	"before_submit": ["tsi.custom.update_attendance_bonus"]
+	# },
+}

@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "EA-.####",
+ "creation": "2023-08-10 11:47:53.630228",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_id",
+  "employee_name",
+  "department",
+  "date",
+  "in_time",
+  "in_time_value",
+  "out_time",
+  "out_time_value",
+  "reason",
+  "level_1_approval",
+  "level_2_approval"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "in_time",
+   "fieldtype": "Datetime",
+   "label": "In Time"
+  },
+  {
+   "fieldname": "out_time",
+   "fieldtype": "Datetime",
+   "label": "Out Time"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "level_1_approval",
+   "fieldtype": "Link",
+   "label": "Level 1 approval",
+   "options": "User"
+  },
+  {
+   "fieldname": "level_2_approval",
+   "fieldtype": "Link",
+   "label": "Level 2 approval",
+   "options": "User"
+  },
+  {
+   "fieldname": "in_time_value",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "In Time"
+  },
+  {
+   "fieldname": "out_time_value",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "Out Time"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-10-09 18:41:20.673610",
+ "modified_by": "Administrator",
+ "module": "tsinterseats",
+ "name": "Exit Application",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

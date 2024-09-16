@@ -1,0 +1,274 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "EO.####",
+ "creation": "2023-08-04 09:58:38.376363",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "employee_user_id",
+  "column_break_5fpkk",
+  "department",
+  "designation",
+  "permission_date",
+  "session_section",
+  "attendance",
+  "column_break_uf86m",
+  "out_time",
+  "out_time_value",
+  "column_break_pptdp",
+  "out",
+  "section_break_fdyid",
+  "shift_type",
+  "column_break_n1eno",
+  "corrected_out_time",
+  "section_break_ktwin",
+  "overall_time",
+  "column_break_jgnkk",
+  "avaliable_time",
+  "g_shift",
+  "n_shift",
+  "i_shift",
+  "ii_shift",
+  "total_time",
+  "section_break_qeda0",
+  "reason",
+  "approversverifiers_section",
+  "level_1",
+  "column_break_hcxrb",
+  "level_2",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "in_standard_filter": 1,
+   "label": "Employee Name"
+  },
+  {
+   "fetch_from": "employee.user_id",
+   "fieldname": "employee_user_id",
+   "fieldtype": "Link",
+   "label": "Employee User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_5fpkk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "permission_date",
+   "fieldtype": "Date",
+   "label": "Permission Date"
+  },
+  {
+   "fieldname": "session_section",
+   "fieldtype": "Section Break",
+   "label": "Session"
+  },
+  {
+   "fetch_from": "attendance.shift",
+   "fieldname": "shift_type",
+   "fieldtype": "Link",
+   "label": "Shift Type",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "column_break_n1eno",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.shift_type==\"G\"",
+   "fieldname": "g_shift",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Early Out",
+   "options": "\n17.15 to 17.30\n17.00 to 17.30\n16.45 to 17.30\n16.30 to 17.30"
+  },
+  {
+   "depends_on": "eval:doc.shift_type==\"N\"",
+   "fieldname": "n_shift",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Early Out",
+   "options": "\n5.15 to 5.30\n5.00 to 5.30\n4.45 to 5.30\n4.30 to 5.30"
+  },
+  {
+   "depends_on": "eval:doc.shift_type==\"I\"",
+   "fieldname": "i_shift",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Early Out",
+   "options": "\n13.45 to 14.00\n13.30 to 14.00\n13.15 to 14.00\n13.00 to 14.00"
+  },
+  {
+   "depends_on": "eval:doc.shift_type==\"II\"",
+   "fieldname": "ii_shift",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Early Out",
+   "options": "\n21.45 to 22.00\n21.30 to 22.00\n21.15 to 22.00\n21.00 to 22.00"
+  },
+  {
+   "fieldname": "total_time",
+   "fieldtype": "Read Only",
+   "label": "Total Time(in mins)",
+   "options": "\n"
+  },
+  {
+   "fieldname": "approversverifiers_section",
+   "fieldtype": "Section Break",
+   "label": "Approvers/Verifiers"
+  },
+  {
+   "fieldname": "level_1",
+   "fieldtype": "Link",
+   "label": "Level 1",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_hcxrb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "level_2",
+   "fieldtype": "Link",
+   "label": "Level 2",
+   "options": "User"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Early Out",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_qeda0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Reason",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_fdyid",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_uf86m",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "out_time",
+   "fieldtype": "Datetime",
+   "label": "Out Time"
+  },
+  {
+   "fieldname": "attendance",
+   "fieldtype": "Link",
+   "label": "Attendance",
+   "options": "Attendance"
+  },
+  {
+   "fieldname": "column_break_pptdp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "shift_type.end_time",
+   "fieldname": "corrected_out_time",
+   "fieldtype": "Read Only",
+   "label": "Corrected Out Time"
+  },
+  {
+   "fieldname": "avaliable_time",
+   "fieldtype": "Float",
+   "label": "Avaliable Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "out_time_value",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "Out Time"
+  },
+  {
+   "fieldname": "section_break_ktwin",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "overall_time",
+   "fieldtype": "Float",
+   "label": "Overall Permission Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jgnkk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "out",
+   "fieldtype": "Float",
+   "label": " Out(in mins)",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-02-23 18:26:26.898518",
+ "modified_by": "Administrator",
+ "module": "tsinterseats",
+ "name": "Early Out",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
